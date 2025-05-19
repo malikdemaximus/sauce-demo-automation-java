@@ -41,3 +41,10 @@ sauce-demo-automation/
 1. Clone the repository:
 ```bash
 git clone https://github.com/your-username/sauce-demo-automation.git
+
+## Allure Reports
+
+После запуска тестов отчет генерируется автоматически:
+```bash
+mvn allure:serve  # Для просмотра локально
+
