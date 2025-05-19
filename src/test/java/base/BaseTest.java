@@ -10,12 +10,14 @@ import utils.ConfigReader;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import io.qameta.allure.Step;
 
 public class BaseTest {
     protected WebDriver driver;
     protected Properties config;
 
     @BeforeMethod
+    @Step("Настройка браузера")
     public void setUp() {
         config = ConfigReader.loadProperties("src/main/resources/config.properties");
         String browser = config.getProperty("browser");
@@ -34,6 +36,7 @@ public class BaseTest {
     }
 
     @AfterMethod
+    @Step("Закрытие браузера")
     public void tearDown() {
         if (driver != null) {
             driver.quit();
