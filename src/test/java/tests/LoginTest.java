@@ -7,7 +7,8 @@ import pages.InventoryPage;
 import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
-    @Test
+    @Test(description = "Проверка успешного логина")
+    @Step("Логин с валидными данными")
     public void testSuccessfulLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(config.getProperty("valid.username"), config.getProperty("valid.password"));
